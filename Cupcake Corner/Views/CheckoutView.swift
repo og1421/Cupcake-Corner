@@ -16,12 +16,16 @@ struct CheckoutView: View {
     var body: some View {
         ScrollView{
             VStack{
-                AsyncImage(url: URL(string: "https: //hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
+                AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
                     image
                         .resizable ( )
                         .scaledToFit()
+                        .accessibilityLabel("Cupcake Image")
+                        .accessibilityHidden(false)
+                        .accessibilityAddTraits(.isImage)
                 } placeholder: {
                     ProgressView()
+                        .accessibilityHidden(true)
                 }
                 .frame(height: 233)
                 
